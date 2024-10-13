@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Shop</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Register Your Shop</h1>
+        <div class="form-container">
+            <form action="{% url 'register_shop' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{form.as_p}}
+                </div>
+                <div class="buttonContainer">
+                <input type="submit" value="Register" class="commonBtn">
+                <button type="reset" class="commonBtn submitBtn"><a href="search" class="tag">Go to Search Shops</a></button>
+                </div>
+            </form>
+        </div>
+        
+</div>
+</body>
+</html>

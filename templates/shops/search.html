@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Search</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Search Nearby Shops</h2>
+        <form method="POST" id="shop-search-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="latitude">Your Latitude:</label>
+                <input type="text" id="latitude" name="latitude" required placeholder="Enter your latitude">
+            </div>
+            <div class="form-group">
+                <label for="longitude">Your Longitude:</label>
+                <input type="text" id="longitude" name="longitude" required placeholder="Enter your longitude">
+            </div>
+                <button type="submit" class="commonBtn">Search Shops</button>            
+        </form>
+    </div>
+
+    <script>
+        // Basic form validation for latitude and longitude
+        document.getElementById('shop-search-form').addEventListener('submit', function (e) {
+            const lat = parseFloat(document.getElementById('latitude').value);
+            const lon = parseFloat(document.getElementById('longitude').value);
+            if (isNaN(lat) || lat < -90 || lat > 90) {
+                alert('Please enter a valid latitude (-90 to 90).');
+                e.preventDefault();
+            }
+            if (isNaN(lon) || lon < -180 || lon > 180) {
+                alert('Please enter a valid longitude (-180 to 180).');
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

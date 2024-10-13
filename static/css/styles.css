@@ -1,0 +1,42 @@
+body {
+    background-color: #c6e3ae;
+    background-size: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+}
+.buttonContainer {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+.commonBtn {
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    height: 20px;
+    border-color: black;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 16px;
+    background-color: rgb(149, 239, 89);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: azure;
+  }
+
+  .submitBtn {
+    background-color: rgb(93, 217, 93);
+  }
